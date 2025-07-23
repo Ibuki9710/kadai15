@@ -5,8 +5,8 @@ $(function() {
 
         //入力データを取得
         let input_no = $("[name='no']").val();
-        let input_names = $("[name='names']").val();
         let input_score = $("[name= 'score']").val();
+        let input_names = $("[name='names']").val();
         $.ajax({
             //送信方法
             type:'POST',
@@ -15,8 +15,8 @@ $(function() {
             //送信データの設定
             data:{
                 no:input_no,
-                names:input_names,
-                score: input_score
+                score: input_score,
+                names:input_names
             },
         }).done(function(data){
 
@@ -25,7 +25,7 @@ $(function() {
 
             //解析データを整形
             // result.messageとresult.timeを改行で結合
-            let text = result.no + '\n' +result.names + '\n' + result.score;
+            let text = result.no + '\n' + result.score + '\n' +result.names +;
   
             $("#ajax_return").text(text);
 
